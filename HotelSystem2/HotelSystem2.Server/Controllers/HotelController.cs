@@ -25,6 +25,22 @@ namespace HotelSystem2.Server.Controllers
 
 
         [HttpGet]
+        /*
+        public async Task<IEnumerable<WeatherForecast>> GetHotelsAsync()
+        {
+            //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            //{
+            //    Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+            //    TemperatureC = Random.Shared.Next(-20, 55),
+            //    Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+            //})
+            //.ToArray();
+
+            var res = await _hotelService.GetHotelsAsync();
+            return Ok(res?.ToArray());
+
+        }*/
+        ///*
         public async Task<IActionResult> GetHotelsAsync()
         {
             //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -35,8 +51,10 @@ namespace HotelSystem2.Server.Controllers
             //})
             //.ToArray();
 
-            return Ok(await _hotelService.GetHotelsAsync());
+            var res = await _hotelService.GetHotelsAsync();
+            return Ok(res.AsEnumerable());
 
         }
+        //*/
     }
 }

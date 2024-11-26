@@ -5,5 +5,6 @@ namespace HotelSystem2.Server.Services
     public interface IHotelService
     {
         Task<IList<Hotel>> GetHotelsAsync();
+        IList<Hotel> GetHotels1();
     }
 }

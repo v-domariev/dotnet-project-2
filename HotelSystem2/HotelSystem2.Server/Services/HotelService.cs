@@ -19,6 +19,11 @@ namespace HotelSystem2.Server.Services
             return await _context.Hotels.ToListAsync();
 
         }
+        public IList<Hotel> GetHotels1() 
+        {
+            return _context.Hotels.ToList();
+
+        }
 
     }
 }
