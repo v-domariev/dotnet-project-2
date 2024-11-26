@@ -11,7 +11,8 @@ namespace HotelSystem2.Server
             var builder = WebApplication.CreateBuilder(args);
 
 
-            builder.Services.AddDbContext<HotelContext>(opt => opt.UseSqlServer("Server=DESKTOP-QBPEBIC\\DEVELOPERDB;Database=HotelSystem1;IntegratedSecurity=true;"));
+            builder.Services.AddDbContext<HotelContext>(opt => opt.UseSqlServer("Server=DESKTOP-QBPEBIC\\DEVELOPERDB;Database=HotelSystem1;User Id=hoteladmin;Password=1;TrustServerCertificate=True;"));
+            //builder.Services.AddDbContext<HotelContext>(opt => opt.UseSqlServer("Server=DESKTOP-QBPEBIC\\DEVELOPERDB;Database=HotelSystem1;"));
             builder.Services.AddScoped<IHotelContext, HotelContext>();
             // Add services to the container.
 
