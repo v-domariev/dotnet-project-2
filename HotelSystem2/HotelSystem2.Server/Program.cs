@@ -1,4 +1,7 @@
 
+using HotelSystem2.Server.Context;
+using Microsoft.EntityFrameworkCore;
+
 namespace HotelSystem2.Server
 {
     public class Program
@@ -7,6 +10,9 @@ namespace HotelSystem2.Server
         {
             var builder = WebApplication.CreateBuilder(args);
 
+
+            builder.Services.AddDbContext<HotelContext>(opt => opt.UseSqlServer("Server=DESKTOP-QBPEBIC\\DEVELOPERDB;Database=HotelSystem1;IntegratedSecurity=true;"));
+            builder.Services.AddScoped<IHotelContext, HotelContext>();
             // Add services to the container.
 
             builder.Services.AddControllers();
@@ -34,6 +40,12 @@ namespace HotelSystem2.Server
             app.MapControllers();
 
             app.MapFallbackToFile("/index.html");
+
+            //services.AddScoped<IDbContext, HotelContext>();
+            //services.AddDbContext<HotelContext>(opt => opt.UseSqlServer("Server=DESKTOP-QBPEBIC\\DEVELOPERDB;Database=HotelSystem1;IntegratedSecurity=true;"));
+
+            //services.AddScoped<IDbContext, HotelContext>();
+            //services.AddDbContext<HotelContext>(opt => opt.UseSqlServer("connection string"));
 
             app.Run();
         }
