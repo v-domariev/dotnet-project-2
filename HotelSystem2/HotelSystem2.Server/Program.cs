@@ -1,5 +1,6 @@
 
 using HotelSystem2.Server.Context;
+using HotelSystem2.Server.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelSystem2.Server
@@ -14,6 +15,7 @@ namespace HotelSystem2.Server
             builder.Services.AddDbContext<HotelContext>(opt => opt.UseSqlServer("Server=DESKTOP-QBPEBIC\\DEVELOPERDB;Database=HotelSystem1;User Id=hoteladmin;Password=1;TrustServerCertificate=True;"));
             //builder.Services.AddDbContext<HotelContext>(opt => opt.UseSqlServer("Server=DESKTOP-QBPEBIC\\DEVELOPERDB;Database=HotelSystem1;"));
             builder.Services.AddScoped<IHotelContext, HotelContext>();
+            builder.Services.AddScoped<IHotelService, HotelService>();
             // Add services to the container.
 
             builder.Services.AddControllers();
