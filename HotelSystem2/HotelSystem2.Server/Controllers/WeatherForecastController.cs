@@ -33,11 +33,16 @@ namespace HotelSystem2.Server.Controllers
             .ToArray();
         }
         [HttpGet("hotel3")]
-        public IEnumerable<Hotel> Gethotel3()
+        public IActionResult Gethotel3()
         {
-            return this._hotelService.GetHotels1()
-            .ToArray();
+            return Ok(this._hotelService.GetHotels1()
+            .ToArray());
         }
+        //public IEnumerable<Hotel> Gethotel3()
+        //{
+        //    return this._hotelService.GetHotels1()
+        //    .ToArray();
+        //}
 
         [HttpGet("/api/hotel2")]
         public async Task<IActionResult> GetHotelsAsync()
