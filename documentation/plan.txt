@@ -1,0 +1,4 @@
+Create personal finance tracker.
+Platforms: Windows, WebBrowser, Android. 
+Tech:
+Angular Ionic
